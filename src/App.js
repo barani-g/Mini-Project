@@ -1,24 +1,28 @@
-
-import Admin from './Admin';
 import './App.css';
-import Manager from './Containers/Manager';
-import User from './Containers/User';
+
+// Import Screens
+import Restaurant from './Screens/Restaurant';
+import User from './Screens/User';
+import Home from './Screens/Home';
+import Admin from './Screens/Admin';
+
+//Import React Router
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Containers/Home';
+
 
 function App() {
   return (
     <div className="App">
+
+      {/* Defining Routes URL and Components */}
       <Router>
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/User' element={<User></User>}></Route>
+          <Route path='/Restaurant' element={<Restaurant></Restaurant>}></Route>
           <Route path='/Admin' element={<Admin></Admin>}></Route>
-          <Route path='/Manager' element={<Manager></Manager>}></Route>
         </Routes>
-        
       </Router>
-      
     </div>
   );
 }
