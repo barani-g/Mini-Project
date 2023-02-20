@@ -1,10 +1,10 @@
 import './App.css';
 
 // Import Screens
-import Restaurant from './Screens/Restaurant';
-import User from './Screens/User';
+import RestaurantLogin from './Screens/RestaurantLogin';
+import UserLogin from './Screens/UserLogin';
 import Home from './Screens/Home';
-import Admin from './Screens/Admin';
+import AdminLogin from './Screens/AdminLogin';
 
 //Import React Router
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -18,9 +18,9 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
-          <Route path='/User' element={<User></User>}></Route>
-          <Route path='/Restaurant' element={<Restaurant></Restaurant>}></Route>
-          <Route path='/Admin' element={<Admin></Admin>}></Route>
+          <Route path='/User' element={<UserLogin></UserLogin>}></Route>
+          <Route path='/Restaurant' element={<RestaurantLogin></RestaurantLogin>}></Route>
+          <Route path='/Admin' element={<AdminLogin></AdminLogin>}></Route>
         </Routes>
       </Router>
     </div>
