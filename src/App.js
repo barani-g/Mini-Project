@@ -1,16 +1,17 @@
 import './App.css';
 
 // Import Screens
-import RestaurantLogin from './Screens/RestaurantLogin';
-import UserLogin from './Screens/UserLogin';
-import Home from './Screens/Home';
-import AdminLogin from './Screens/AdminLogin';
-import UserHome from './Screens/UserHome';
-import RestaurantHome from './Screens/RestaurantHome';
+import RestaurantLogin from './Screens/LoginScreens/RestaurantLogin';
+import UserLogin from './Screens/LoginScreens/UserLogin';
+import Home from './Screens/HomeScreens/Home';
+import AdminLogin from './Screens/LoginScreens/AdminLogin';
+import UserHome from './Screens/HomeScreens/UserHome';
+import RestaurantHome from './Screens/HomeScreens/RestaurantHome';
+import AdminHome from './Screens/HomeScreens/AdminHome';
 
 //Import React Router
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AdminHome from './Screens/AdminHome';
+
 
 
 

@@ -4,9 +4,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 //Import Images
-import UserImg from '../Icons/User_Icon.svg';
-import AdminImg from '../Icons/Admin_Icon.svg';
-import RestaurantImg from '../Icons/Restaurant_Icon.svg';
+import UserImg from '../../Icons/User_Icon.svg';
+import AdminImg from '../../Icons/Admin_Icon.svg';
+import RestaurantImg from '../../Icons/Restaurant_Icon.svg';
 
 function Home() {
   return (
