@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 function AdminLogin() {
   return (
@@ -36,9 +38,13 @@ function AdminLogin() {
               <a href="#" class="text-mypeach hover:text-black"> Forgot your password? </a>
             </div>
           </div>
+          
           <div>
+          <Link to="/AdminHome">
             <button type="submit" class="bg-mypeach flex w-full cursor-pointer justify-center rounded-lg bg-gradient-to-r p-4 font-semibold tracking-wide text-black hover:text-white shadow-lg transition duration-500 ease-in hover:bg-black hover:bg-gradient-to-l">Sign in</button>
+            </Link>
           </div>
+          
           <p class="text-md mt-10 flex flex-col items-center justify-center text-center text-gray-500">
             <span>Don't have an account?</span>
             <a href="#" class="text-mypeach cursor-pointer no-underline transition duration-300 ease-in hover:text-black hover:underline">Sign up</a>

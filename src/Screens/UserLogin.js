@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function UserLogin() {
   return (
@@ -37,11 +38,15 @@ function UserLogin() {
             </div>
           </div>
           <div>
-            <button type="submit" class="bg-mypurple flex w-full cursor-pointer justify-center rounded-lg bg-gradient-to-r p-4 font-semibold tracking-wide text-gray-100 shadow-lg transition duration-500 ease-in hover:bg-black hover:bg-gradient-to-l">Sign in</button>
+          <Link to="/UserHome">
+            <button class="bg-mypurple flex w-full cursor-pointer justify-center rounded-lg bg-gradient-to-r p-4 font-semibold tracking-wide text-gray-100 shadow-lg transition duration-500 ease-in hover:bg-black hover:bg-gradient-to-l">Sign in</button>
+            </Link>
           </div>
           <p class="text-md mt-10 flex flex-col items-center justify-center text-center text-gray-500">
             <span>Don't have an account?</span>
+            
             <a href="#" class="text-mypurple cursor-pointer no-underline transition duration-300 ease-in hover:text-black hover:underline">Sign up</a>
+            
           </p>
         </form>
       </div>
