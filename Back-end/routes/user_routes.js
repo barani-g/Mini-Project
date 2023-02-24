@@ -17,10 +17,10 @@ router.route('/add').post((req, res) => {
     const username = req.body.username;
     const password = req.body.password;
     const role = req.body.role;
-    const newUser = new User({userName, password, role});
+    const newUser = new User({username, password, role});
 
     newUser.save()
-        .then(()=> {console.log('User Added!')})
+        .then(()=> {res.json('User Added!')})
         .catch(err => res.status(400).json('Error: '+ err));
 });
 
