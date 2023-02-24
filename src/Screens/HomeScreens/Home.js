@@ -21,7 +21,7 @@ function Home() {
               <img class="mt-2 aspect-square" src={UserImg} />
               <div class="mt-10 text-lg font-bold">User</div>
             </div>
-            </Link>
+            </Link> 
           </div>
 
           {/* Restaurant */}
