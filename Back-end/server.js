@@ -17,7 +17,7 @@ app.use(express.json());
 
 //Connecting to MongoDB
 const uri = process.env.ATLAS_URI;
-mongoose.set("strictQuery", false);
+mongoose.set("strictQuery", false);// Remove Warning 
 mongoose.connect(uri);
 const connection = mongoose.connection;
 connection.once('open', ()=> {
