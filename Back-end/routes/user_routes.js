@@ -13,14 +13,36 @@ router.route('/').get((req, res) => {
 });
 
 //Add User
-router.route('/add').post((req, res) => {
+router.route('/addUser').post((req, res) => {
     const username = req.body.username;
     const password = req.body.password;
-    const role = req.body.role;
+    const role = "user"
     const newUser = new User({username, password, role});
 
     newUser.save()
         .then(()=> {res.json('User Added!')})
+        .catch(err => res.status(400).json('Error: '+ err));
+});
+
+router.route('/addRestaurantUser').post((req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+    const role = "res"
+    const newUser = new User({username, password, role});
+
+    newUser.save()
+        .then(()=> {res.json('Restaurant User Added!')})
+        .catch(err => res.status(400).json('Error: '+ err));
+});
+
+router.route('/addAdmin').post((req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+    const role = "admin"
+    const newUser = new User({username, password, role});
+
+    newUser.save()
+        .then(()=> {res.json('Admin Added!')})
         .catch(err => res.status(400).json('Error: '+ err));
 });
 
