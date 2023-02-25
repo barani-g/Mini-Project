@@ -7,7 +7,6 @@ const mongoose = require('mongoose');
 const userRoutes = require('./routes/user_routes');
 
 //Dotenv - For Connection
-
 require('dotenv').config();
 
 //Initialise App
