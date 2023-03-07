@@ -1,24 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
-
-function handleSignIn() {
-  return axios.get('http://localhost:8000/users/')
-  .then(function (response) {
-    // handle success
-    console.log(response);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .finally(function () {
-    // always executed
-  });
-}
+// import { Link } from 'react-router-dom';
 
 
 function UserLogin() {
+  const [text, setText] = useState('');
   return (
 <div class="relative flex min-h-screen">
   <div class="flex min-w-0 flex-auto flex-col items-center bg-white sm:flex-row sm:justify-center md:items-start md:justify-start">
@@ -35,7 +21,7 @@ function UserLogin() {
           <h2 class="mt-6 text-3xl font-bold text-gray-900">Welcome Back!</h2>
           <p class="mt-2 text-sm text-gray-500">Please sign in to your account</p>
         </div>
-        <form class="mt-8 space-y-6" action="#" method="POST">
+        <form class="mt-8 space-y-6" >
           <input type="hidden" name="remember" value="true" />
           <div class="relative">
             <label class="ml-3 text-sm font-bold tracking-wide text-gray-700">Email</label>
@@ -55,14 +41,12 @@ function UserLogin() {
             </div>
           </div>
           <div>
-          
-            <button onClick={handleSignIn} class="bg-mypurple flex w-full cursor-pointer justify-center rounded-lg bg-gradient-to-r p-4 font-semibold tracking-wide text-gray-100 shadow-lg transition duration-500 ease-in hover:bg-black hover:bg-gradient-to-l">Sign in</button>
-            
+          <Link to="/UserHome">
+            <button type="submit" class="bg-mypurple flex w-full cursor-pointer justify-center rounded-lg bg-gradient-to-r p-4 font-semibold tracking-wide text-gray-100 shadow-lg transition duration-500 ease-in hover:bg-black hover:bg-gradient-to-l">Sign in</button>
+          </Link>
           </div>
           <p class="text-md mt-10 flex flex-col items-center justify-center text-center text-gray-500">
             <span>Don't have an account?</span>
-            
-            
             <a href="" class="text-mypurple cursor-pointer no-underline transition duration-300 ease-in hover:text-black hover:underline">Sign up</a>
             
           </p>
