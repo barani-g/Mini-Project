@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 
 function UserLogin() {
-  const [text, setText] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   return (
 <div class="relative flex min-h-screen">
   <div class="flex min-w-0 flex-auto flex-col items-center bg-white sm:flex-row sm:justify-center md:items-start md:justify-start">
@@ -25,11 +26,11 @@ function UserLogin() {
           <input type="hidden" name="remember" value="true" />
           <div class="relative">
             <label class="ml-3 text-sm font-bold tracking-wide text-gray-700">Email</label>
-            <input class="w-full rounded-lg border border-gray-300 px-4 py-2 text-base focus:border-indigo-500 focus:outline-none" type="" placeholder="mail@gmail.com" value="" />
+            <input class="w-full rounded-lg border border-gray-300 px-4 py-2 text-base focus:border-indigo-500 focus:outline-none" type="text" placeholder="mail@gmail.com" value={username} onChange={(e) => setUsername(e.target.value) }/>
           </div>
           <div class="mt-8 content-center">
             <label class="ml-3 text-sm font-bold tracking-wide text-gray-700"> Password </label>
-            <input class="w-full content-center rounded-lg border border-gray-300 px-4 py-2 text-base focus:border-indigo-500 focus:outline-none" type="" placeholder="Enter your password" value="" />
+            <input class="w-full content-center rounded-lg border border-gray-300 px-4 py-2 text-base focus:border-indigo-500 focus:outline-none" type="text" placeholder="Enter your password" value={password}  onChange={(e) => setPassword(e.target.value)}/>
           </div>
           <div class="flex items-center justify-between">
             <div class="flex items-center">
