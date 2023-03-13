@@ -11,7 +11,7 @@ function UserHome() {
   return (
     <div>
       UserHome
-      <div>{UserDetails}</div>
+      <div>{UserDetails.username}</div>
       </div>
   )
 }
