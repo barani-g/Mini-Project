@@ -47,7 +47,9 @@ function AdminLogin() {
           
           <p class="text-md mt-10 flex flex-col items-center justify-center text-center text-gray-500">
             <span>Don't have an account?</span>
-            <a href="#" class="text-mypeach cursor-pointer no-underline transition duration-300 ease-in hover:text-black hover:underline">Sign up</a>
+            <Link to="/AdminRegister">
+            <button class="text-mypeach cursor-pointer no-underline transition duration-300 ease-in hover:text-black hover:underline">Sign up</button>
+            </Link>
           </p>
         </form>
       </div>
