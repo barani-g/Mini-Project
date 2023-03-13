@@ -10,8 +10,8 @@ function UserHome() {
 
   return (
     <div>
-      Welcome 
-      <div>{UserDetails.username}</div>
+      UserHome
+      <div>{UserDetails}</div>
       </div>
   )
 }
