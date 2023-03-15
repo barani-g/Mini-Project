@@ -28,7 +28,6 @@ function App() {
   return (
     <div className="App">
 
-      {/* Defining Routes URL and Components */}
       <Router>
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
