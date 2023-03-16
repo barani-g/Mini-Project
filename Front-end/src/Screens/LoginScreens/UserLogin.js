@@ -1,7 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate} from 'react-router-dom';
+
+import axios from "axios";
+
 
 function UserLogin() {
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  //Navigate
+  const navigate = useNavigate();
+
+  //Axios Configuration
+  const loginConfiguration = {
+    method: "post",
+    url: "http://localhost:9000/users/login",
+    data: {
+      username,
+      password,
+    },
+  };
+
+  //HandleSignIn
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios(loginConfiguration)
+    .then((result) => {
+      navigate('/UserHome',{state:result.data});
+      
+  })
+    .catch((error) => {alert("No User Found!");})
+  }
+
+  
   return (
 <div class="relative flex min-h-screen">
   <div class="flex min-w-0 flex-auto flex-col items-center bg-white sm:flex-row sm:justify-center md:items-start md:justify-start">
@@ -18,15 +50,15 @@ function UserLogin() {
           <h2 class="mt-6 text-3xl font-bold text-gray-900">Welcome Back!</h2>
           <p class="mt-2 text-sm text-gray-500">Please sign in to your account</p>
         </div>
-        <form class="mt-8 space-y-6" action="#" method="POST">
+        <form class="mt-8 space-y-6" onSubmit={handleSubmit}>
           <input type="hidden" name="remember" value="true" />
           <div class="relative">
-            <label class="ml-3 text-sm font-bold tracking-wide text-gray-700">Email</label>
-            <input class="w-full rounded-lg border border-gray-300 px-4 py-2 text-base focus:border-indigo-500 focus:outline-none" type="" placeholder="mail@gmail.com" value="" />
+            <label class="ml-3 text-sm font-bold tracking-wide text-gray-700">Username</label>
+            <input class="w-full rounded-lg border border-gray-300 px-4 py-2 text-base focus:border-indigo-500 focus:outline-none" type="text" placeholder="Enter Username" value={username} onChange={(e) => setUsername(e.target.value) }/>
           </div>
           <div class="mt-8 content-center">
             <label class="ml-3 text-sm font-bold tracking-wide text-gray-700"> Password </label>
-            <input class="w-full content-center rounded-lg border border-gray-300 px-4 py-2 text-base focus:border-indigo-500 focus:outline-none" type="" placeholder="Enter your password" value="" />
+            <input class="w-full content-center rounded-lg border border-gray-300 px-4 py-2 text-base focus:border-indigo-500 focus:outline-none" type="text" placeholder="Enter Password" value={password}  onChange={(e) => setPassword(e.target.value)}/>
           </div>
           <div class="flex items-center justify-between">
             <div class="flex items-center">
@@ -38,15 +70,16 @@ function UserLogin() {
             </div>
           </div>
           <div>
-          <Link to="/UserHome">
-            <button class="bg-mypurple flex w-full cursor-pointer justify-center rounded-lg bg-gradient-to-r p-4 font-semibold tracking-wide text-gray-100 shadow-lg transition duration-500 ease-in hover:bg-black hover:bg-gradient-to-l">Sign in</button>
-            </Link>
+          
+            <button type="submit" class="bg-mypurple flex w-full cursor-pointer justify-center rounded-lg bg-gradient-to-r p-4 font-semibold tracking-wide text-gray-100 shadow-lg transition duration-500 ease-in hover:bg-black hover:bg-gradient-to-l">Sign in</button>
+          
           </div>
           <p class="text-md mt-10 flex flex-col items-center justify-center text-center text-gray-500">
             <span>Don't have an account?</span>
-            
-            <a href="#" class="text-mypurple cursor-pointer no-underline transition duration-300 ease-in hover:text-black hover:underline">Sign up</a>
-            
+
+            <Link to="/UserRegister">
+            <button class="text-mypurple cursor-pointer no-underline transition duration-300 ease-in hover:text-black hover:underline">Sign up</button>
+            </Link>
           </p>
         </form>
       </div>
