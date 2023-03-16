@@ -6,22 +6,46 @@ import MenuImg from '../../Icons/Menu-b.svg';
 import OrderImg from '../../Icons/Order-b.svg';
 import LogoutImg from '../../Icons/Logout.svg';
 
-
+import { Routes, Route } from 'react-router-dom';
+import Menu from '../../Components/Menu';
+import Orders from '../../Components/Orders';
 
 
 function UserRestaurantHome() {
 
-
+  const [option, setoption] = useState(1);
   //Navigate
   const navigate = useNavigate();
 
+  const handleMenu = () => {
+    setoption(1);
+  }
+  const handleOrder = () => {
+    setoption(2);
+  }
 
   const handleLogout = (e) => {
     navigate('/');
-  }  
+  }
+  
+  const content = () => {
+    switch(option) {
+      case 1: return <Menu></Menu>
+      case 2: return <Orders></Orders>
+      // default: return <div>Error</div>
+    }
+  }
   
   return (
     <div>
+
+      <div class="ml-[300px]">
+          {/* Content */}
+          {
+            content()
+          }
+      </div>
+      
       {/* Side Bar */}
     <div
       class="sidebar fixed top-0 bottom-0 lg:left-0 p-6 w-[300px] overflow-y-auto text-center bg-white shadow-lg"
@@ -47,16 +71,21 @@ function UserRestaurantHome() {
       </div>
 
       {/* Menu Button */}
+      
       <button
         class="p-2.5 mt-3 flex w-full items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-mypurple text-black hover:text-white "
+        onClick={handleMenu}
       >
         <img class="aspect-square " src={MenuImg} />
         <span class="text-[15px] ml-4 font-bold">Menu</span>
       </button>
+      
 
       {/* Order Button */}
+      
       <button
         class="p-2.5 mt-3 flex w-full items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-mypurple text-black hover:text-white"
+        onClick={handleOrder}
       >
         <img class="aspect-square " src={OrderImg} />
         <span class="text-[15px] ml-4 font-bold">Order</span>
