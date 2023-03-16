@@ -14,13 +14,15 @@ import AdminRegister from './Screens/RegisterScreens/AdminRegister';
 
 //Home Screens
 import Home from './Screens/HomeScreens/Home';
-import UserHome from './Screens/HomeScreens/UserHome';
+import UserRestaurantHome from './Screens/HomeScreens/UserRestaurantHome';
 import RestaurantHome from './Screens/HomeScreens/RestaurantHome';
 import AdminHome from './Screens/HomeScreens/AdminHome';
+import UserHome from './Screens/HomeScreens/UserHome';
 
 
 //Import React Router
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 
 
@@ -36,6 +38,7 @@ function App() {
           <Route path='/AdminRegister' element={<AdminRegister></AdminRegister>}></Route>
           <Route path='/Restaurant' element={<RestaurantLogin></RestaurantLogin>}></Route>
           <Route path='/UserHome' element={<UserHome></UserHome>}></Route>
+          <Route path='/UserRestaurantHome' element={<UserRestaurantHome></UserRestaurantHome>}></Route>
           <Route path='/RestaurantHome' element={<RestaurantHome></RestaurantHome>}></Route>
           <Route path='/AdminHome' element={<AdminHome></AdminHome>}></Route>
           <Route path='/Admin' element={<AdminLogin></AdminLogin>}></Route>
