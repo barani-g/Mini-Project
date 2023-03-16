@@ -21,16 +21,16 @@ function UserHome() {
                 <div class="flex gap-10">
                 {/* Restaurant 1 Button */}
                 <Link to="/UserRestaurantHome">
-                <div class="relative shadow-lg font-bold text-2xl">
+                <div class="relative rounded-lg hover:shadow-2xl transition duration-200 ease-in-out ">
                     <img src={require("/Users/gnaneshwaran/Documents/GitProjects/Mini-Project/my-app/Front-end/src/Images/Arasan.jpg")} class="rounded-lg w-[400px] h-[300px]"></img>
-                    <h1 class="absolute text-5xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">Arasan</h1>
+                    <h1 class="absolute text-5xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold">Arasan</h1>
                 </div>
                 </Link>
 
                 {/* Restaurant 2 Button */}
-                <div class="relative shadow-lg font-bold text-2xl">
+                <div class="relative ">
                     <img src={require("/Users/gnaneshwaran/Documents/GitProjects/Mini-Project/my-app/Front-end/src/Images/Darling.jpg")} class="rounded-lg w-[400px] h-[300px]"></img>
-                    <h1 class="absolute text-5xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">Darling</h1>
+                    <h1 class="absolute text-5xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold">Darling</h1>
                 </div>
                 
                 </div>
