@@ -21,7 +21,7 @@ function UserHome() {
                 <div class="flex gap-10">
                 {/* Restaurant 1 Button */}
                 <Link to="/UserRestaurantHome">
-                <div class="relative rounded-lg hover:shadow-2xl transition duration-200 ease-in-out ">
+                <div class="relative rounded-lg hover:shadow-2xl hover:transform hover:scale-105 transition duration-300 ease-in-out ">
                     <img src={require("/Users/gnaneshwaran/Documents/GitProjects/Mini-Project/my-app/Front-end/src/Images/Arasan.jpg")} class="rounded-lg w-[400px] h-[300px]"></img>
                     <h1 class="absolute text-5xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold">Arasan</h1>
                 </div>
