@@ -25,12 +25,16 @@ function UserLogin() {
   //HandleSignIn
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(username == '' | password == '') {
+      alert("Fill the empty values!")
+      return
+    }
     axios(loginConfiguration)
     .then((result) => {
       navigate('/UserHome',{state:result.data});
       
   })
-    .catch((error) => {alert("No User Found!");})
+    .catch((error) => {alert("Invalid Credentials!");})
   }
 
   
@@ -58,7 +62,7 @@ function UserLogin() {
           </div>
           <div class="mt-8 content-center">
             <label class="ml-3 text-sm font-bold tracking-wide text-gray-700"> Password </label>
-            <input class="w-full content-center rounded-lg border border-gray-300 px-4 py-2 text-base focus:border-indigo-500 focus:outline-none" type="text" placeholder="Enter Password" value={password}  onChange={(e) => setPassword(e.target.value)}/>
+            <input class="w-full content-center rounded-lg border border-gray-300 px-4 py-2 text-base focus:border-indigo-500 focus:outline-none" type="password" placeholder="Enter Password" value={password}  onChange={(e) => setPassword(e.target.value)}/>
           </div>
           <div class="flex items-center justify-between">
             <div class="flex items-center">
