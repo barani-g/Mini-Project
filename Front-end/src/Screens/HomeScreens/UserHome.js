@@ -1,17 +1,30 @@
 
 import React, { useEffect, useState } from 'react';
 import {useLocation, Link, useNavigate} from 'react-router-dom';
+import LogoutImg from '../../Icons/Logout.svg';
 
 
 function UserHome() {
     const location = useLocation();
     const UserDetails = location.state;
+    const navigate = useNavigate();
+
+    const handleLogout = (e) => {
+        navigate('/');
+      }
   return (
     <div >
-        <div class="flex flex-col items-start mt-40 ml-40 ">
+        <div class="flex justify-evenly mt-40 my w-full">
             <span class="text-2xl"> Welcome 
                 <span class="font-bold"> {UserDetails.username}</span>
             </span>
+            <button
+                class="p-2.5 mt-3 flex w-40 items-center rounded-md px-4 duration-300 hover:bg-mypurple text-black hover:text-white"
+                onClick={handleLogout}
+            >
+        <img class="aspect-square " src={LogoutImg} />
+        <span class="text-[15px] ml-4 font-bold">Logout</span>
+      </button>
         </div>
         
         <div class="flex flex-col items-center mt-6">
