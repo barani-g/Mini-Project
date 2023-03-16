@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 // Import Screens
-
+import LandingPage from './Screens/HomeScreens/LandingPage';
 //Login Screens
 import RestaurantLogin from './Screens/LoginScreens/RestaurantLogin';
 import UserLogin from './Screens/LoginScreens/UserLogin';
@@ -30,7 +30,8 @@ function App() {
 
       <Router>
         <Routes>
-          <Route path='/' element={<Home></Home>}></Route>
+          <Route path='/' element={<LandingPage></LandingPage>}></Route>
+          <Route path='/Home' element={<Home></Home>}></Route>
           <Route path='/User' element={<UserLogin></UserLogin>}></Route>
           <Route path='/UserRegister' element={<UserRegister></UserRegister>}></Route>
           <Route path='/RestaurantRegister' element={<RestaurantRegister></RestaurantRegister>}></Route>
