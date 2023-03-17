@@ -22,7 +22,7 @@ function AdminLogin() {
         <form class="mt-8 space-y-6" action="#" method="POST">
           <input type="hidden" name="remember" value="true" />
           <div class="relative">
-            <label class="ml-3 text-sm font-bold tracking-wide text-gray-700">Email</label>
+            <label class="ml-3 text-sm font-bold tracking-wide text-gray-700">Username</label>
             <input class="w-full rounded-lg border border-gray-300 px-4 py-2 text-base focus:border-indigo-500 focus:outline-none" type="" placeholder="mail@gmail.com" value="" />
           </div>
           <div class="mt-8 content-center">
