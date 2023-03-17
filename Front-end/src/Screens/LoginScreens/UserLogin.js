@@ -31,7 +31,13 @@ function UserLogin() {
     }
     axios(loginConfiguration)
     .then((result) => {
-      navigate('/UserHome',{state:result.data});
+      if (result.data.role == 'user') {
+        navigate('/UserHome',{state:result.data});
+      }
+      else {
+        alert("You don't have permission to access this part of the site!");
+      }
+      
       
   })
     .catch((error) => {alert("Invalid Credentials!");})
