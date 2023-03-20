@@ -25,7 +25,7 @@ function UserRestaurantHome() {
   }
 
   const handleLogout = (e) => {
-    navigate('/');
+    navigate('/Role');
   }
   
   const content = () => {

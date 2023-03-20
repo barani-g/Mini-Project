@@ -24,6 +24,9 @@ import UserHome from './Screens/HomeScreens/UserHome';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Menu from './Components/Menu';
 
+//Import Landing Page
+import LandingPage from './Screens/LandingPage/LandingPage';
+
 
 
 
@@ -32,7 +35,8 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path='/' element={<Home></Home>}></Route>
+          <Route path='/' element={<LandingPage></LandingPage>}></Route>
+          <Route path='/Role' element={<Home></Home>}></Route>
           <Route path='/User' element={<UserLogin></UserLogin>}></Route>
           <Route path='/UserRegister' element={<UserRegister></UserRegister>}></Route>
           <Route path='/RestaurantRegister' element={<RestaurantRegister></RestaurantRegister>}></Route>
